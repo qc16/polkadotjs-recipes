@@ -1,0 +1,16 @@
+{
+  "name": "offline",
+  "version": "1.0.0",
+  "repository": "https://github.com/amaurymartiny/offline",
+  "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
+  "scripts": {
+    "start": "ts-node src"
+  },
+  "dependencies": {
+    "@polkadot/api": "^0.93.1"
+  },
+  "devDependencies": {
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  }
+}
