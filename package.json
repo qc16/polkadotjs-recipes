@@ -4,10 +4,12 @@
   "repository": "https://github.com/amaurymartiny/offline",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
   "scripts": {
-    "start": "ts-node src"
+    "index": "ts-node src",
+    "decode": "ts-node src/decode.ts"
   },
   "dependencies": {
-    "@polkadot/api": "^0.93.1"
+    "@polkadot/api": "^0.93.1",
+    "rxjs": "^6.5.3"
   },
   "devDependencies": {
     "ts-node": "^8.4.1",
