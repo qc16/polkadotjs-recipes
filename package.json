@@ -4,7 +4,7 @@
   "repository": "https://github.com/amaurymartiny/offline",
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
   "scripts": {
-    "index": "ts-node src",
+    "payload": "ts-node src/payload.ts",
     "decode": "ts-node src/decode.ts"
   },
   "dependencies": {
