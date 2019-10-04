@@ -10,21 +10,22 @@ import Call from '@polkadot/types/primitive/Generic/Call';
 Call.injectMethods(extrinsics);
 
 function decodeExtrinsic() {
-  // `raw` is:
-  // - signer public key
-  // - signature of the payload (see ExtrinsicPayload for that)
-  // - era, nonce, tip
-  // - method
   const raw =
     '0x' +
+    // The 2 lines below are the signer address
     'ff' +
     'd172a74cda4c865912c32ba0a80a57ae69abae410e5ccb59dee84e2f4432db4f' +
+    // The 2 lines below are the signature of the ExtrinsicPayload
     '21de8ff3cae3ee72ced565ed5f79fd153dc84a3be9166b7904eecde8045ba59a' +
     'd2f998cc970e59157f168ec762eea061f4930b5288f57a45a1c1911863860208' +
     '000408' + // era. nonce, tip
+    // The 4 lines below are the method call (here balances.transfer)
+    // callIndex of balances.transfer
     '0500' +
+    // 1st arg = dest
     'ff' +
     'd7568e5f0a7eda67a82691ff379ac4bba4f9c9b859fe779b5d46363b61ad2db9' +
+    // 2nd arg = amount
     'e56c';
   const tx = createType('ExtrinsicV3', hexToU8a(raw), {
     isSigned: true
