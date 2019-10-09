@@ -1,6 +1,6 @@
 # offline
 
-Generating & signing offline transactions with PolkadotJS api
+Generating & signing offline transactions with PolkadotJS api without PolkadotJS's `api` object.
 
 Useful links:
 
