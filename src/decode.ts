@@ -1,6 +1,9 @@
 import { createType } from '@polkadot/types';
 import { hexToU8a } from '@polkadot/util';
 
+// IMPORTANT!!!
+// This STATIC extrinsics metadata can be outdated very fast! Use it with
+// extreme caution.
 import extrinsics from '@polkadot/api-metadata/extrinsics/static';
 import Call from '@polkadot/types/primitive/Generic/Call';
 
