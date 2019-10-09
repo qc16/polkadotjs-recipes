@@ -1,6 +1,5 @@
 import { Keyring } from '@polkadot/api';
 import { createType } from '@polkadot/types';
-import { ExtrinsicPayload } from '@polkadot/types/interfaces';
 import { SignerPayloadJSON } from '@polkadot/types/types';
 import { cryptoWaitReady } from '@polkadot/util-crypto';
 
@@ -15,7 +14,7 @@ function getMethod() {
 /**
  * Step 2: Generate the payload to sign.
  */
-function getPayload() {
+export function getPayload() {
   const payload: SignerPayloadJSON = {
     address: '5DTestUPts3kjeXSTMyerHihn1uwMfLj8vU8sqF7qYrFabHE',
     blockHash:
@@ -31,25 +30,32 @@ function getPayload() {
     version: 3
   };
 
-  return createType('ExtrinsicPayload', payload, { version: 3 });
+  return payload;
 }
 
 /**
- * Sign 3: Sign the payload
+ * Step 3: Sign the payload only
  */
-async function sign(payload: ExtrinsicPayload) {
+export async function sign(payload: SignerPayloadJSON) {
   // We're creating an Alice account that will sign the payload
   // Wait for the promise to resolve async WASM
   await cryptoWaitReady();
   const keyring = new Keyring({ type: 'sr25519' });
   const alice = keyring.addFromUri('//Alice', { name: 'Alice default' });
 
-  return payload.sign(alice);
+  return createType('ExtrinsicPayload', payload, { version: 3 }).sign(alice);
+}
+
+/**
+ * Get the signed payload
+ */
+export async function getSignedPayload() {
+  const payload = getPayload();
+  return sign(payload);
 }
 
 async function main() {
-  const payload = getPayload();
-  const signedPayload = await sign(payload);
+  const signedPayload = await getSignedPayload();
 
   console.log(signedPayload.signature);
 }

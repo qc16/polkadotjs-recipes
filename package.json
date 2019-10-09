@@ -5,7 +5,8 @@
   "author": "Amaury Martiny <amaury.martiny@protonmail.com>",
   "scripts": {
     "payload": "ts-node src/payload.ts",
-    "decode": "ts-node src/decode.ts"
+    "decode": "ts-node src/decode.ts",
+    "extrinsic": "ts-node src/extrinsic.ts"
   },
   "dependencies": {
     "@polkadot/api": "^0.93.1",
