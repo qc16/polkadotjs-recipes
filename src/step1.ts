@@ -1,5 +1,4 @@
-import fromMetadata from '@polkadot/api-metadata/extrinsics/fromMetadata';
-import { Metadata } from '@polkadot/types';
+import Metadata from '@polkadot/metadata';
 import { Call } from '@polkadot/types/interfaces';
 
 /**
@@ -15,9 +14,8 @@ export function createCall(
   amount: number
 ): Call {
   const metadata = new Metadata(metadataRpc);
-  const extrinsics = fromMetadata(metadata);
 
-  return extrinsics.balances.transfer(to, amount);
+  return metadata.tx.balances.transfer(to, amount);
 }
 
 /**
