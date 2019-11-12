@@ -31,7 +31,7 @@ function decode(metadataRpc: string, extrinsicAsHex: string): Extrinsic {
 export async function step5(): Promise<void> {
   // TODO RPC-NEEDED state_getMetadata()
   // You need to pass in your own rpc result from state_getMetadata
-  const metadataRpc = require('@polkadot/types/Metadata/static').default;
+  const metadataRpc = require('@polkadot/metadata/Metadata/static').default;
 
   // Fetch the extrinsic we generated in step 4
   const extrinsicAsHex = await step4();

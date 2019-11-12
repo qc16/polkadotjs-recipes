@@ -26,7 +26,7 @@ export function step1(): { call: Call } {
 
   // TODO RPC-NEEDED state_getMetadata()
   // You need to pass in your own rpc result from state_getMetadata
-  const metadataRpc = require('@polkadot/types/Metadata/static').default;
+  const metadataRpc = require('@polkadot/metadata/Metadata/static').default;
 
   const call = createCall(
     metadataRpc,

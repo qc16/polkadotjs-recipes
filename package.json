@@ -7,7 +7,7 @@
     "start": "ts-node src/step5.ts"
   },
   "dependencies": {
-    "@polkadot/api": "^0.96.0-beta.16",
+    "@polkadot/api": "^0.97.0-beta.3",
     "rxjs": "^6.5.3"
   },
   "devDependencies": {
