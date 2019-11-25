@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "@polkadot/api": "^0.97.0-beta.14"
+    "@polkadot/api": "^0.97.0-beta.28"
   },
   "devDependencies": {
     "@amaurymartiny/config": "^1.0.9",

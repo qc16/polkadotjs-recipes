@@ -1,6 +1,5 @@
 import ApiPromise from '@polkadot/api/promise';
 import { WsProvider } from '@polkadot/rpc-provider';
-import Event from '@polkadot/types/primitive/Generic/Event';
 
 /**
  * Get the events at a block number
@@ -17,7 +16,7 @@ async function eventsAtBlock(blockNumber: number): Promise<void> {
   const metadata = await api.rpc.state.getMetadata(blockHash);
 
   // Inject the metadata at that blockHash
-  Event.injectMetadata(metadata);
+  api.registry.setMetadata(metadata);
 
   // Get events at blockHash
   const events = await api.query.system.events.at(blockHash);
@@ -26,4 +25,4 @@ async function eventsAtBlock(blockNumber: number): Promise<void> {
 }
 
 // Put the number of a block here
-eventsAtBlock(431759).catch(error => console.error(error));
+eventsAtBlock(432000).catch(error => console.error(error));
